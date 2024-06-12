@@ -44,3 +44,20 @@ yarn install
 ```bash
 yarn build
 ```
+
+## Testing
+
+Warning: Some child dependencies of `@testing-library` are not compatible with the latest version of React. There are some other warnings related to the fetch mock.
+Test are still passing but you may see some warnings.
+
+
+1. install all necessary dependencies
+
+2. test application
+```bash
+yarn install
+```
+
+```bash
+yarn test
+```
