@@ -8,6 +8,7 @@ import {
 
 import TranscriptsList from "./pages/TranscriptsList";
 import TranscriptsDetail from "./pages/TranscriptsDetail";
+import NotFoundPage from "./pages/NotFound";
 
 const mockData = [
   {
@@ -33,6 +34,7 @@ function App() {
           element={<TranscriptsList transcripts={mockData} />}
         />
         <Route path="/transcripts/:id" element={<TranscriptsDetail />} />
+        <Route path="/not-found" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/transcripts" />} />
       </Routes>
     </Router>

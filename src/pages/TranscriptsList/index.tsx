@@ -22,12 +22,16 @@ const TranscriptsList: React.FC<TranscriptsListProps> = ({ transcripts }) => {
           >
             <Link
               to={`/transcripts/${transcript.id}`}
-              className="text-blue-500"
+              className="text-blue-500 text-lg font-bold"
             >
-              {transcript.title}
+              🚀 {transcript.title}
             </Link>
           </li>
         ))}
+        <hr />
+        <Link to={`/transcripts/1234567890`} className="text-red-500 flex">
+          🚫 Example not found
+        </Link>
       </ul>
     </div>
   );

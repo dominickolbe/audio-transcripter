@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { TranscriptResponse } from "../../types";
 import TranscriptText from "../../components/TranscriptText";
@@ -25,7 +25,7 @@ const TranscriptsDetail = () => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <Navigate to="/not-found" />;
   if (!data) return <div>Transcript not found</div>;
 
   const handleTranscriptClick = (startTime: number) => {
