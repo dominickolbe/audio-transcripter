@@ -21,6 +21,11 @@ const TranscriptText: React.FC<TranscriptTextProps> = ({
         <div
           key={block.start + " " + block.end}
           onClick={() => onClick(block.start)}
+          className={` ${
+            currentTime >= block.start && currentTime <= block.end
+              ? "bg-yellow-300"
+              : "hover:bg-yellow-100"
+          } text-lg cursor-pointer transition duration-200 ease-in-out`}
         >
           {block.text}
         </div>
