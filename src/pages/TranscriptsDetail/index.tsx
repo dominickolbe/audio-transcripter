@@ -22,11 +22,7 @@ const TranscriptsDetail = () => {
     return () => {
       audio.removeEventListener("timeupdate", updateTime);
     };
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <Navigate to="/not-found" />;
-  if (!data) return <div>Transcript not found</div>;
+  }, [data, loading, id]);
 
   const handleTranscriptClick = (startTime: number) => {
     const audio = audioRef.current;
@@ -36,6 +32,10 @@ const TranscriptsDetail = () => {
       audio.play();
     }
   };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <Navigate to="/not-found" />;
+  if (!data) return <div>Transcript not found</div>;
 
   return (
     <div className="p-4 h-screen">

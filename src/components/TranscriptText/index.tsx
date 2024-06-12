@@ -24,8 +24,8 @@ const TranscriptText: React.FC<TranscriptTextProps> = ({
           className={` ${
             currentTime >= block.start && currentTime <= block.end
               ? "bg-yellow-300"
-              : "hover:bg-yellow-100"
-          } text-lg cursor-pointer transition duration-200 ease-in-out`}
+              : "hover:bg-blue-100"
+          } text-lg cursor-pointer transition duration-200 ease-in-out mb-2`}
         >
           {block.text}
         </div>
